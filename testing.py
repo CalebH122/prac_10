@@ -13,6 +13,8 @@ def repeat_string(s, n):
 
 
 def is_long_word(word, length=5):
+    # TODO: 4. Fix the failing is_long_word function
+    # (don't change the tests, change the function!)
     """
     Determine if the word is as long or longer than the length passed in
     >>> is_long_word("not")
@@ -55,15 +57,6 @@ def run_tests():
     assert test_car.fuel == 20
 
 
-run_tests()
-
-# TODO: 3. Uncomment the following line and run the doctests
-# (PyCharm may see your >>> doctest comments and run doctests anyway.)
-doctest.testmod()
-
-# TODO: 4. Fix the failing is_long_word function
-# (don't change the tests, change the function!)
-
 # TODO: 5. Write and test a function to format a phrase as a sentence,
 # starting with a capital and ending with a single full stop.
 # Important: start with a function header and just use pass as the body
@@ -73,3 +66,25 @@ doctest.testmod()
 # and one more you decide (one that is valid!)
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
+def test_sentence(line):
+    """
+    >>> test_sentence('hello')
+    'Hello.'
+    >>> test_sentence('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> test_sentence('my name is lalala')
+    'My name is lalala.'
+    >>> test_sentence('i love cake.')
+    'I love cake.'
+    """
+    sentence = line.capitalize()
+    if sentence[-1] != '.':
+        sentence = sentence + '.'
+    return sentence
+
+
+run_tests()
+
+# TODO: 3. Uncomment the following line and run the doctests
+# (PyCharm may see your >>> doctest comments and run doctests anyway.)
+doctest.testmod()
